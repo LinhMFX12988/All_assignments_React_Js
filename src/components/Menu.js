@@ -26,9 +26,9 @@ function Menu(props) {
     const menu = props.dishes.map((staffs) => {
       return (
         <div key={staffs.id} className="col- col-md-6 col-xl-4">
-          <Card onClick={setDishSelect}>
+          {/* <Card onClick={setDishSelect}> */}
             <CardTitle>{staffs.name}</CardTitle>
-          </Card>
+          {/* </Card> */}
         </div>
       );
     });
@@ -38,7 +38,7 @@ function Menu(props) {
         <div className="row">{menu}</div>
         <div className="row">
           <div className="col-12 col-md-12 col-xl-12">
-            {dishSelect}
+            {/* {dishSelect} */}
           </div>
         </div>
       </div>
