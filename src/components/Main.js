@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import Menu from "./Menu";
+import LishStaffs from "./ListStaffs";
 import { STAFFS } from "../shared/staffs";
 
 class Main extends Component {
@@ -15,7 +15,7 @@ class Main extends Component {
     return (
       <div className="container">
         <Header />
-        <Menu dishes={this.state.dishes} />
+        <LishStaffs dishes={this.state.dishes} />
         <Footer />
       </div>
     );
