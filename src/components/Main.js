@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
 import Header from "./Header";
 import LishStaffs from "./ListStaffs";
 import StaffDetail from "./DetailStaff";
+import Department from "./Department";
 import Footer from "./Footer";
 import { STAFFS, DEPARTMENTS } from "../shared/staffs";
-import { Switch, Route, Redirect } from "react-router-dom";
 
 class Main extends Component {
   constructor(props) {
@@ -22,12 +23,13 @@ class Main extends Component {
       />
 
     return (
-      <div className="container">
+      <div>
         <Header />
         <Switch>
           <Route exact path="/staffs" component={() => <LishStaffs dishes={this.state.dishes} />} />
           <Route path="/staffs/:id" component={StaffWithId} />
-          {/* <Redirect to="/staffs" /> */}
+          <Route path="/department" component={() => <Department departments={this.state.departments} />} />
+          <Redirect to="/staffs" />
         </Switch>
         <Footer />
       </div>
