@@ -4,15 +4,17 @@ import Header from "./Header";
 import LishStaffs from "./ListStaffs";
 import StaffDetail from "./DetailStaff";
 import Department from "./Department";
+import Salary from "./Salary";
 import Footer from "./Footer";
-import { STAFFS, DEPARTMENTS } from "../shared/staffs";
+import { STAFFS, DEPARTMENTS, ROLE } from "../shared/staffs";
 
 class Main extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dishes: STAFFS,
+      staffs: STAFFS,
       departments: DEPARTMENTS,
+      role: ROLE
     };
   }
   render() {
@@ -26,9 +28,10 @@ class Main extends Component {
       <div>
         <Header />
         <Switch>
-          <Route exact path="/staffs" component={() => <LishStaffs dishes={this.state.dishes} />} />
+          <Route exact path="/staffs" component={() => <LishStaffs dishes={this.state.staffs} />} />
           <Route path="/staffs/:id" component={StaffWithId} />
           <Route path="/department" component={() => <Department departments={this.state.departments} />} />
+          <Route path="/salary" component={() => <Salary staffs={this.state.staffs} />} />
           <Redirect to="/staffs" />
         </Switch>
         <Footer />

@@ -4,7 +4,7 @@ import { CardImg, CardTitle, CardText, CardBody, Breadcrumb, BreadcrumbItem } fr
 import dateFormat from "dateformat";
 
 function RenderStaff({ staffs }) {
-    console.log("staffs.department", staffs)
+
     return (
       <>
         <div className="row">
@@ -33,7 +33,7 @@ function RenderStaff({ staffs }) {
           <hr />
           <div className="row">
             <Breadcrumb>
-              <BreadcrumbItem><Link to="/nhanvien">Nhân Viên</Link></BreadcrumbItem>
+              <BreadcrumbItem><Link to="/staffs">Nhân Viên</Link></BreadcrumbItem>
               <BreadcrumbItem active>{props.staffs.name}</BreadcrumbItem>
             </Breadcrumb>
           </div>
